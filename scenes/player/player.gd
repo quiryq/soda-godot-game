@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var max_hp: int = 20
+var current_hp: int = max_hp
 var max_speed: float = 300
 
 
