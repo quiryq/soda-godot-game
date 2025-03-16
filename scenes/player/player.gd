@@ -15,7 +15,7 @@ enum State {
 
 @export var speed: float = 300.0
 @export var max_hp: float = 100.0
-@export var hp: float = 100.0
+@export var hp: float = max_hp
 @export var armor: float = 0.0
 @export var health_regeneration: float = 0.5
 @export var level: int = 1
@@ -136,6 +136,7 @@ func sprite_flip():
 func handle_input():
 	if Input.is_action_just_pressed("right_click") and special_ability_cooldown <= 0:
 		use_special_ability()
+
 
 
 func change_state(new_state):

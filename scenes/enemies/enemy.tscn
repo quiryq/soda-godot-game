@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3mal31m5rw77"]
+
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_iju5i"]
+[ext_resource type="Texture2D" uid="uid://eaix3rq26meu" path="res://icon.svg" id="2_nxtn6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gm8qx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nxtn6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgx23"]
+size = Vector2(11, 4)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_iju5i")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.25, -5.75)
+scale = Vector2(0.0898438, 0.0898438)
+sprite_frames = SubResource("SpriteFrames_gm8qx")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_rgx23")
+
+[node name="AttackTimer" type="Timer" parent="."]
