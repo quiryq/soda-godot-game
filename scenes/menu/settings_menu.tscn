@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6nqdkcjcveva"]
+
+[ext_resource type="Script" path="res://scenes/menu/settings_menu.gd" id="1_2xjob"]
+[ext_resource type="FontFile" uid="uid://cimgr0tkg3fyi" path="res://scenes/menu/GrapeSoda.ttf" id="1_q2r55"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xjob")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 14.2651
+offset_top = 16.2426
+offset_right = 128.265
+offset_bottom = 56.2426
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_q2r55")
+theme_override_font_sizes/font_size = 25
+text = "Resolution"
+
+[node name="resolution" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/resolution" to="." method="_on_resolution_item_selected"]
