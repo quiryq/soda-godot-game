@@ -15,9 +15,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgx23"]
-size = Vector2(11, 4)
+size = Vector2(11, 11)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 10
 script = ExtResource("1_iju5i")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
@@ -27,7 +29,7 @@ sprite_frames = SubResource("SpriteFrames_gm8qx")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2)
+position = Vector2(0.5, -5.5)
 shape = SubResource("RectangleShape2D_rgx23")
 
 [node name="AttackTimer" type="Timer" parent="."]
