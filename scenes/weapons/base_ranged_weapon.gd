@@ -7,9 +7,9 @@ extends Node2D
 @export var critical_chance: float = 1  # 10% шанс крита
 @export var critical_multiplier: float = 1.5
 @export var fire_rate: float = 2.0  # Выстрелов в секунду
-@export var multishot: int = 1  # Количество пуль за выстрел
+@export var multishot: int = 2  # Количество пуль за выстрел
 @export var bullet_speed: float = 700.0
-@export var spread_angle: float = 15.0  # Разброс в градусах
+@export var spread_angle: float = 5.0  # Разброс в градусах
 @export var bullet_scene: PackedScene
 @export var is_automatic: bool = true
 
