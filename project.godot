@@ -17,8 +17,10 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
 [input]
@@ -61,10 +63,11 @@ right_click={
 
 [layer_names]
 
-2d_render/layer_1="world"
-2d_render/layer_2="player"
-2d_render/layer_3="enemies"
-2d_render/layer_4="drop"
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemies"
+2d_physics/layer_4="bullet"
+2d_physics/layer_5="drop"
 
 [rendering]
 

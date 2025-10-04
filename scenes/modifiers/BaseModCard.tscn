@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c170h3t3pkrtp"]
+
+[ext_resource type="Script" path="res://scenes/modifiers/base_mod_card.gd" id="1_8rvei"]
+
+[node name="BaseModCard" type="Node2D"]
+script = ExtResource("1_8rvei")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

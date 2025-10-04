@@ -177,6 +177,7 @@ func take_damage(damage_amount):
 	var total_armor = armor + stat_modifiers["armor"]
 	var actual_damage = max(1, damage_amount * (1 - total_armor / 100))
 	hp -= actual_damage
+	print(hp)
 	
 	emit_signal("hp_changed", hp, max_hp + stat_modifiers["max_hp"])
 	

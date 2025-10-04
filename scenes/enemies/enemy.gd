@@ -9,8 +9,8 @@ enum State {
 
 @export var move_speed: float = 120.0
 @export var health: int = 50
-@export var attack_damage: int = 1
-@export var attack_range: float = 10
+@export var attack_damage: int = 30
+@export var attack_range: float = 15
 @export var attack_cooldown: float = 1
 
 
@@ -69,14 +69,14 @@ func perform_attack():
 	
 	
 	if global_position.distance_to(player.global_position) > attack_range * 1.2:
-		change_state(State.CHASE)
+		change_state(State.	CHASE)
 
 func take_damage(damage: int):
 	if current_state == State.DEAD:
 		return
 	
 	health -= damage
-
+	print("enemy:", health)
 	
 	if health <= 0:
 		die()
