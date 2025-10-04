@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://oghg0hejaoiv"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_dq146"]
+[ext_resource type="Script" uid="uid://dntd24yacv2p2" path="res://scenes/player/player.gd" id="1_dq146"]
 [ext_resource type="Texture2D" uid="uid://cxabmaqs1i7k4" path="res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_1.png" id="2_jjkvg"]
 [ext_resource type="Texture2D" uid="uid://b1uhppdwbek8b" path="res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_2.png" id="3_u0wqb"]
 [ext_resource type="Texture2D" uid="uid://d1cys6sphsj8b" path="res://assets/2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest2/v1/priest2_v1_3.png" id="4_n44x5"]

@@ -68,7 +68,6 @@ func _on_lifetime_timeout():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("HELLO")
 	if body.has_method("take_damage"):
 		# Расчёт финального урона с учётом крита
 		var final_damage = base_damage
