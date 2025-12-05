@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf7x5rj5yweef"]
 
-[ext_resource type="Script" path="res://scenes/weapons/base_bullet.gd" id="1_w1k5j"]
-[ext_resource type="Texture2D" uid="uid://c773psiuyior0" path="res://assets/purple_neon_bullet.png" id="2_pxxsk"]
+[ext_resource type="Script" uid="uid://ct8o1285j0te0" path="res://scenes/weapons/base_bullet.gd" id="1_w1k5j"]
+[ext_resource type="Texture2D" uid="uid://c773psiuyior0" path="res://assets/guns/purple_neon_bullet.png" id="2_pxxsk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a2gwy"]
 radius = 6.08276

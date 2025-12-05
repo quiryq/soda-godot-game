@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bf5wbo325gcd8"]
 
 [ext_resource type="Script" uid="uid://c827vrgkkt102" path="res://scenes/weapons/base_ranged_weapon.gd" id="1_bh7qo"]
-[ext_resource type="Texture2D" uid="uid://xl7kjg7j3xe7" path="res://assets/neon_gun.png" id="2_e1s70"]
+[ext_resource type="Texture2D" uid="uid://xl7kjg7j3xe7" path="res://assets/guns/neon_gun.png" id="2_e1s70"]
 [ext_resource type="PackedScene" uid="uid://cf7x5rj5yweef" path="res://scenes/weapons/BaseBullet.tscn" id="2_elknb"]
 
 [node name="BaseRangedWeapon" type="Node2D"]

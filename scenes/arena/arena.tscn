@@ -1,14 +1,128 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq1gymg4mxura"]
+[gd_scene load_steps=10 format=3 uid="uid://dq1gymg4mxura"]
 
-[ext_resource type="Script" path="res://scenes/arena/arena.gd" id="1_x7ya6"]
+[ext_resource type="Script" uid="uid://dtu8screw3aef" path="res://scenes/arena/arena.gd" id="1_x7ya6"]
+[ext_resource type="Texture2D" uid="uid://cf7wdls3u8fio" path="res://assets/arena/38680495_8679675.jpg" id="2_asdgj"]
 [ext_resource type="PackedScene" uid="uid://oghg0hejaoiv" path="res://scenes/player/player.tscn" id="2_c3rpq"]
 [ext_resource type="PackedScene" uid="uid://c3mal31m5rw77" path="res://scenes/enemies/enemy.tscn" id="3_00vd2"]
+[ext_resource type="Texture2D" uid="uid://brs03pm1v7fcw" path="res://assets/arena/arena.png" id="4_aj7ud"]
+[ext_resource type="Script" uid="uid://cf3x0p3d1mngk" path="res://scenes/game/game_manager.gd" id="6_jx0ua"]
+[ext_resource type="Script" uid="uid://k5lg77a8if3v" path="res://scenes/game/mob_spawner.gd" id="7_ii07k"]
+[ext_resource type="FontFile" uid="uid://cimgr0tkg3fyi" path="res://scenes/menu/GrapeSoda.ttf" id="8_6w4xk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj7ud"]
+size = Vector2(18, 626)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_x7ya6")
+
+[node name="BackgroundSprite" type="Node2D" parent="."]
+modulate = Color(0.4390491, 0.43904912, 0.43904912, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(607, -17)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D3" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(616, 579)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D4" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(25, 616)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D5" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-546, 610)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D6" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-546, 34)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D7" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(-549, -545)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D8" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(22, -588)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="Sprite2D9" type="Sprite2D" parent="BackgroundSprite"]
+position = Vector2(613, -594)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_asdgj")
+
+[node name="ArenaSprite" type="Sprite2D" parent="."]
+modulate = Color(0.82606, 0.82606006, 0.82606, 1)
+texture = ExtResource("4_aj7ud")
 
 [node name="Player" parent="." instance=ExtResource("2_c3rpq")]
 position = Vector2(18, 30)
 
 [node name="Enemy" parent="." instance=ExtResource("3_00vd2")]
 position = Vector2(235, 373)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2(-311, -7)
+collision_layer = 64
+collision_mask = 15
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(322, -308)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_aj7ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_aj7ud")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(623, 16)
+shape = SubResource("RectangleShape2D_aj7ud")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(304, 320)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_aj7ud")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("6_jx0ua")
+metadata/_custom_type_script = "uid://cf3x0p3d1mngk"
+
+[node name="MobSpawner" type="Node2D" parent="GameManager"]
+script = ExtResource("7_ii07k")
+enemy_scene = ExtResource("3_00vd2")
+metadata/_custom_type_script = "uid://k5lg77a8if3v"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="GameManager"]
+
+[node name="RoundLabel" type="Label" parent="GameManager/CanvasLayer"]
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 324.0
+offset_bottom = 121.0
+theme_override_fonts/font = ExtResource("8_6w4xk")
+theme_override_font_sizes/font_size = 24
+text = "Round: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeLabel" type="Label" parent="GameManager/CanvasLayer"]
+offset_left = 180.0
+offset_top = 19.0
+offset_right = 246.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("8_6w4xk")
+theme_override_font_sizes/font_size = 24
+text = "60s"
+metadata/_edit_use_anchors_ = true
+
+[node name="HPBar" type="ProgressBar" parent="GameManager/CanvasLayer"]
+offset_left = 471.0
+offset_top = 18.0
+offset_right = 621.0
+offset_bottom = 45.0

@@ -192,6 +192,7 @@ func die():
 	hp = 0
 	change_state(State.DEAD)
 	emit_signal("died")
+	get_tree().change_scene_to_file("res://scenes/menu/main_menu.tscn")
 
 
 func heal(amount):

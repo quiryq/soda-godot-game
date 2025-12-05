@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2wkf0588dcm6"]
+
+[ext_resource type="Script" uid="uid://k5lg77a8if3v" path="res://scenes/game/mob_spawner.gd" id="1_irn8h"]
+[ext_resource type="PackedScene" uid="uid://c3mal31m5rw77" path="res://scenes/enemies/enemy.tscn" id="2_wwuv2"]
+
+[node name="MobSpawner" type="Node2D"]
+script = ExtResource("1_irn8h")
+enemy_scene = ExtResource("2_wwuv2")
+
+[node name="SpawnTimer" type="Timer" parent="."]

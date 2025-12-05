@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xl7kjg7j3xe7"
-path="res://.godot/imported/neon_gun.png-b96504f878caea48d91ebdb7edfb8a66.ctex"
+uid="uid://cf7wdls3u8fio"
+path="res://.godot/imported/38680495_8679675.jpg-215857409a32c28744c6e5b83f64acf9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/neon_gun.png"
-dest_files=["res://.godot/imported/neon_gun.png-b96504f878caea48d91ebdb7edfb8a66.ctex"]
+source_file="res://assets/arena/38680495_8679675.jpg"
+dest_files=["res://.godot/imported/38680495_8679675.jpg-215857409a32c28744c6e5b83f64acf9.ctex"]
 
 [params]
 
