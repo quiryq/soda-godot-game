@@ -7,7 +7,7 @@ extends Node2D
 @export var critical_chance: float = 1  # 10% шанс крита
 @export var critical_multiplier: float = 1.5
 @export var fire_rate: float = 2.0  # Выстрелов в секунду
-@export var multishot: int = 2  # Количество пуль за выстрел
+@export var multishot: int = 1  # Количество пуль за выстрел
 @export var bullet_speed: float = 700.0
 @export var spread_angle: float = 5.0  # Разброс в градусах
 @export var bullet_scene: PackedScene
@@ -133,3 +133,37 @@ func upgrade(upgrade_type: String, value):
 			multishot += value
 		"spread":
 			spread_angle = max(0, spread_angle - value)  # Уменьшение разброса
+
+
+func install_mod_card(card: WeaponModCard, slot_index: int) -> bool:
+	if slot_index < 0 or slot_index >= MOD_SLOTS_COUNT:
+		push_error("Invalid mod slot index")
+		return false
+	
+	# Если слот уже занят, сначала снимаем старую карточку
+	if mod_slots[slot_index] != null:
+		uninstall_mod_card(slot_index)
+	
+	# Устанавливаем новую карточку
+	mod_slots[slot_index] = card
+	card.apply_to_weapon(self)
+
+	return true
+func uninstall_mod_card(slot_index: int) -> WeaponModCard:
+	if slot_index < 0 or slot_index >= MOD_SLOTS_COUNT:
+		push_error("Invalid mod slot index")
+		return null
+	
+	var card = mod_slots[slot_index]
+	if card != null:
+		card.remove_from_weapon(self)
+		mod_slots[slot_index] = null
+
+	
+	return card
+
+
+func get_mod_card(slot_index: int) -> WeaponModCard:
+	if slot_index < 0 or slot_index >= MOD_SLOTS_COUNT:
+		return null
+	return mod_slots[slot_index]

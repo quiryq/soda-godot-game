@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6u4hncojhgl1"]
+
+[ext_resource type="Script" uid="uid://cf3x0p3d1mngk" path="res://scenes/game/game_manager.gd" id="1_hqhjp"]
+[ext_resource type="Script" uid="uid://k5lg77a8if3v" path="res://scenes/game/mob_spawner.gd" id="2_nfljh"]
+[ext_resource type="FontFile" uid="uid://cimgr0tkg3fyi" path="res://scenes/menu/GrapeSoda.ttf" id="3_ffuou"]
+[ext_resource type="PackedScene" uid="uid://c3mal31m5rw77" path="res://scenes/enemies/enemy.tscn" id="3_g0gdj"]
+
+[node name="GameManager" type="Node2D"]
+script = ExtResource("1_hqhjp")
+
+[node name="MobSpawner" type="Node2D" parent="."]
+script = ExtResource("2_nfljh")
+enemy_scene = ExtResource("3_g0gdj")
+metadata/_custom_type_script = "uid://k5lg77a8if3v"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="RoundLabel" type="Label" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 350.0
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("3_ffuou")
+theme_override_font_sizes/font_size = 48
+text = "Round: 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 317.0
+offset_top = 51.0
+offset_right = 383.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("3_ffuou")
+theme_override_font_sizes/font_size = 48
+text = "60s"
+metadata/_edit_use_anchors_ = true
+
+[node name="HPBar" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 471.0
+offset_top = 59.0
+offset_right = 621.0
+offset_bottom = 86.0
